@@ -1,0 +1,165 @@
+body{
+    background-color: rgb(159, 166, 171);
+    font-family: Arial, Helvetica, sans-serif;
+}
+a{
+    text-decoration: none;
+}
+
+
+
+
+
+
+/**************************
+CSS FOR PRODUCT LISTS 
+**************************/
+.lines{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5px;
+    margin-top: 50px;
+}
+
+
+.columns{
+    flex-basis: 30%;
+    padding:2rm;
+    height: 300px;
+    min-width: 150px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 50px;
+    background-color: white;
+    
+}
+
+.columns img{
+    width: 100%;
+}
+
+/************************
+    CSS FOR BLOG LISTS 
+**************************/
+.columns-blogs{
+    flex-basis: 30%;
+    padding:2rm;
+    height: 500px;
+    min-width: 140px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 50px;
+    background-color: aquamarine;
+    
+}
+
+.columns-blogs img{
+    width: 100%;
+}
+
+/*************************
+    CSS FOR PAGE PRE-LOADER 
+**************************/
+#preloader{
+    background: white url(preloader2.gif) no-repeat center center;
+    background-size: 10%;
+    height: 100vh;
+    width:100%;
+    position: fixed;
+    z-index: 100;
+}
+
+
+.active{
+    color:rgb(255, 74, 14);
+}
+
+
+
+/*****************************
+    CSS FOR FOOTER SECTION  
+*****************************/
+.container{
+    max-width: 1180px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+footer{
+    background-color: #444;
+}
+
+footer .footer-cols{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    padding: 2rem;
+    text-align: left;
+    font-size: 14px;
+}
+
+footer .footer-cols ul{
+    list-style: none;
+}
+
+footer .footer-cols a{
+    color: aliceblue;
+}
+
+footer .footer-cols ul li:first-child{
+    font-size: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: #444 solid 1px;
+    margin-bottom: 1rem;
+}
+
+footer .footer-bottom{
+    background-color: #333333;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+
+/*************************
+    CSS FOR BLINKING HEADING  
+***************************/
+
+.sub-heading{
+    font-size: 2em;
+    font-family: Arial;
+    text-transform: uppercase;
+    color:rgb(3, 106, 72) ;
+    text-align: center;
+    animation: blink 2s linear infinite;
+}
+
+@keyframes blink{
+    0%{
+        opacity:0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+/************************
+    CSS FOR REVEAL ELEMENTS 
+*************************/
+
+.reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.reveal.active{
+    transform: translateY(0px);
+    opacity: 1;
+}

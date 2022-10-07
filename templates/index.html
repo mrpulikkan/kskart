@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+    <link rel="stylesheet" href="{% static 'css/introslider.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.css' %}">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <title>Home</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <style>
+        .card{
+            margin-top: 22px;
+        }
+        .card-container{
+            width: 100%;
+            margin-right: auto;
+            margin-left: auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+       
+    </style>
+</head>
+<body onload="slider()">
+
+    <!--------------------
+        page preloader
+    --------------------->
+    <div id="preloader"></div>
+
+   
+    
+    <!----------------------
+        Slider section
+    ------------------------>
+
+        <div class="banner">
+            <div class="slider">
+                <img src="{% static 'images/nb1.jpg' %}" id="slideImg">
+            </div>
+            <div class="overlay">
+                <div class="navbar">
+                    <div class="logo">
+                        <img src="{% static 'images/organic.png'%}" alt="">
+                    </div>
+                    <div class="menu-icons">
+                       <a href="{% url 'userlogin' %}"><i class="fa fa-user" style="color: white; font-size:25px;"></i></a>
+                       &nbsp;&nbsp;&nbsp;
+                       <a href=""><i class="fa fa-shopping-cart" style="color: white; font-size:25px;"></i></a>
+                       &nbsp;&nbsp;&nbsp;
+                       <a href=""><i class="fa fa-bars" style="color: white; font-size:25px;"></i></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h1>HELLO WORLD</h1>
+                    <h3>welcome ! please be online</h3>
+                    <div>
+                        <button type="submit">MORE</button>
+                        <button type="submit">LESS</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    <!-------------------
+        Latest Products  
+    -------------------->
+        <div class="lines">
+                <div class="sub-heading">
+                    <h2>latest products</h2>
+                </div>
+                <div class="lines">
+                    {% for i in items %}
+                        <div class="columns reveal">
+                            <img src="{{i.pic.url}}" alt="">
+                            <h4>{{i.name}}</h4>
+                        </div>
+                    {% endfor %}
+                </div>
+        </div>
+
+    <!-------------------------
+        Receipe Blogs 
+    -------------------------->
+    <div class="sub-heading">
+        <h2>Receipe blogs</h2>
+    </div>
+        <div class="lines">
+                {% for j in last_three %}
+                <div class="columns-blogs reveal">
+                    <a href=""><img src="{{j.pic.url}}" alt=""/></a> 
+                    <h3> {{j.name}}  &nbsp;&nbsp;&nbsp;&nbsp;  </h3>
+                </div>
+                {% endfor%}   
+                
+        </div>
+
+    <!------------------------
+        Footer 
+    ------------------------->
+    <footer>
+        <div class="container">
+            <div class="footer-cols">
+                <ul>
+                    <li>ROOMS</li>
+                    <li> <a href=#>2 Bedrooms</a></li>
+                    <li> <a href=#>2 Bedrooms</a></li>
+                    <li> <a href=#>2 Bedrooms</a></li>
+                    <li> <a href=#>2 Bedrooms</a></li>
+                </ul>
+                <ul>
+                    <li>LOCATIONS</li>
+                    <li> <a href=#> Ernakulam</a></li>
+                    <li> <a href=#> kottayam</a></li>
+                    <li> <a href=#> Thrissur</a></li>
+                    <li> <a href=#> Trivandrum</a></li>
+                </ul>
+                <ul>
+                    <li>ROOMS</li>
+                    <li> <a href=#>2 Bedrooms</a></li>
+                    <li> <a href=#>2 Bedrooms</a></li>
+                    <li> <a href=#>2 Bedrooms</a></li>
+                    <li> <a href=#>2 Bedrooms</a></li>
+                </ul>
+                
+            </div>
+        </div>
+        <div class="footer-bottom">
+            Copyright &copy; Developed By Frontend
+        </div>
+    </footer>
+   
+    
+
+    <!-- <script>
+
+        var loader = document.getElementById("preloader")
+        window.addEventListener("load",function(){
+            loader.style.display = "none"
+        })
+    </script> -->
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/mainjs.js' %}"></script>
+    <script>
+        var slideImg = document.getElementById("slideImg");
+        var images = new Array(
+            "{% static 'images/veg1.jpg' %}",
+            "{% static 'images/veg3.jpg' %}",
+            "{% static 'images/nb1.jpg' %}",
+            "{% static 'images/veg4.jpg' %}"
+        );
+        var len = images.length;
+        var i = 0;
+        function slider(){
+            if(i > len-1){
+                i = 0;
+            }
+            slideImg.src = images[i];
+            i++;
+            setTimeout('slider()',3000);
+        }
+    </script>
+        
+</body>
+</html>

@@ -1,0 +1,102 @@
+
+
+
+body{
+    background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('compubg.jpg')  ;
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+.form-info{
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+    color:aqua;
+    /* margin-top: 100px; */
+}
+
+.register-form{
+
+    width: 600px;
+    align-items: center;
+    margin-left: 30%;
+    margin-top: 15px;
+}
+
+.register-form input{
+    width: 550px;
+    height: 45px;
+    margin: 6px;
+    font-size: 16px;
+    border-radius: 9px;
+}
+
+p{
+    text-align: center;
+    font-size: 17px;
+    color: white;
+}
+
+p a{
+    color: orangered;
+}
+
+p a:hover{
+    color:rgb(249, 252, 251);
+}
+
+
+
+button{
+    width: 273px;
+    height: 40px;
+    margin: 5px;
+    background-color:aquamarine;
+    font-size: 19px;
+    border: 2px solid darkolivegreen;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.button-cancel{
+    background-color: lightsalmon;
+}
+
+.button-cancel a{
+    text-decoration: none;
+    color: black;
+}
+.button-cancel a:hover{
+    text-decoration: none;
+    color: rgb(46, 43, 43);
+    font-size: 19px;
+}
+
+button:hover{
+    background-color: aqua;
+    border:  2px solid darkblue;
+}
+
+.button-cancel:hover{
+    background-color: orangered;
+    border: 2px solid darkred;
+}
+
+@media screen and (max-width: 900px) {
+    .register-form, button, .register-form input {
+      width: 98%;
+      margin: 2px;
+      
+    }
+    button, .register-form input{
+        margin-bottom: 5px;
+    }
+    button{
+        width: 100%;
+    }
+
+  }
+

@@ -1,0 +1,34 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <!--------------------
+        page preloader
+    --------------------->
+    <div id="preloader"></div>
+
+    <!--------------------
+        Admin Home page
+    --------------------->
+    {% include 'inc/navbar.html' %}
+    <br><br><br><br><br>
+    <h1>Welcome {{user.username}}</h1>
+    <p><a href="/admin">Settings</a></p>
+    <p><a href="{% url 'userlogout' %}">LOGOUT</a></p>
+
+    <!--------------------
+        JavaScript
+    --------------------->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    
+    
+</body>
+</html>
+{% endblock %}

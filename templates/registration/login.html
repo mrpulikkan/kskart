@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    
+    <style>
+       
+        a{
+            text-decoration: none;
+            color: rgb(76, 73, 73);
+        }
+        a:hover{
+            color: orangered;
+            font-size: 18px;
+        }
+        
+    </style>
+</head>
+<body>
+    <!--------------------
+        page preloader
+    --------------------->
+    <div id="preloader"></div>
+
+    <div class="form-info">
+       <br><br><br><br><br> Login
+    </div>
+    <div class="register-form">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Username or Email " name="username">
+            <input type="password" placeholder="Password" name="password" >
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+            <button type="submit">LOGIN</button>
+            <button class="button-cancel"><a href="{% url 'index' %}">CANCEL</a></button>
+        </form>
+        <p>
+            <a href="{% url 'registration' %}">New User?</a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;          <a href="{% url 'password_reset' %}">Forget Password?</a>
+
+            
+        </p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- <script src="{% static 'js/mainjs.js' %}"></script> -->
+
+    <script>
+
+        setTimeout(function(){
+            $('#preloader').fadeToggle();
+        }, 1000);
+
+    </script>
+    
+</body>
+</html>

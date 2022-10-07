@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}">
+    <style>
+        nav{
+            height: 50px;
+            width: 100%;
+            background-color: #333333;
+            color: rgb(51, 34, 34);
+            position: fixed;
+        }
+        
+        nav ul{
+            margin: 0;
+            padding: 0;
+        
+        }
+        
+        nav li{
+            display: inline;
+            float: left;
+        }
+        
+        nav a{
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 0;
+            color: #eee;
+        }
+
+        .nav-icons{
+            margin-left: 1300px;
+            margin-right: 5px;
+        }
+        .nav-icons a {
+            margin: 0;
+            display: inline-block;
+            width: 45px;
+            block-size: 10px;
+            margin-block: 0;            
+            padding-left: 0;
+            padding-right:0 ;
+        }
+       
+        
+        .active{
+            color:rgb(255, 74, 14);
+        }
+        
+        
+        
+        nav a:hover{
+            color: rgb(7, 154, 7);
+
+        }
+        .nav-icons a:hover{
+            color: rgb(7, 154, 7);
+        }
+    </style>
+</head>
+<body>
+
+    
+    <nav>
+        <ul>
+            <li><img src=""  height="49px" width="100px" >
+            <li><a href="{% url 'adminhome'%}"> HOME</a></li>
+            <li><a href=#> ABOUT</a></li>
+            <li><a href=""> RENT</a></li>
+            <li><a href=""> SALES</a></li>
+        </ul>   
+        <div class="nav-icons">
+            <a href="/admin"><i class="fa fa-cog" ></i></a>
+            <a href="{% url 'userlogout' %}"><i class="fa fa-user" ></i></a>
+        </div>
+    </nav>
+</body>
+</html>
+
